@@ -11,12 +11,23 @@ SPD influences dodge chances
 DEF influences damage reduction and HP
 
 Monsters include:
-Slime           Skeleton        Demon
-ATK: 5          ATK: 10         ATK: 15
-DEF: 8          DEF: 6          DEF: 8
-SPD: 3          SPD: 10         SPD: 15
-ACC: 9          ACC: 8         ACC: 10
+Slime         
+ATK: 5         
+DEF: 8          
+SPD: 3          
+ACC: 9          
 
+Skeleton        
+ATK: 10     
+DEF: 6       
+SPD: 10        
+ACC: 8
+
+Demon         
+ATK: 15         
+DEF: 8          
+SPD: 15          
+ACC: 10   
 
 Known Bugs:
 -Sometimes HP falls below 0 and game does not end, must land one more attack to trigger battle end.
