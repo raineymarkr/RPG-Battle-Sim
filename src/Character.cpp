@@ -47,7 +47,7 @@ void Character::attack( Monster& target)
 void Character::poison( Monster& target)
 {
         DiceRoller* die = new DiceRoller;
-        DodgePer = WIS * 4;
+        DodgePer = WIS * 5;
         DiceRoll = die->rollDie();
         if (DodgePer <= DiceRoll)
         {
@@ -62,7 +62,7 @@ void Character::poison( Monster& target)
 void Character::burn( Monster& target)
 {
         DiceRoller* die = new DiceRoller;
-        DodgePer = WIS * 4;
+        DodgePer = WIS * 5;
         DiceRoll = die->rollDie();
 
         if (DodgePer <= DiceRoll)
@@ -77,7 +77,7 @@ void Character::burn( Monster& target)
 void Character::confuse( Monster& target)
 {
         DiceRoller* die = new DiceRoller;
-        DodgePer = WIS * 4;
+        DodgePer = WIS * 5;
         DiceRoll = die->rollDie();
 
         if (DodgePer <= DiceRoll)
@@ -92,7 +92,7 @@ void Character::confuse( Monster& target)
 void Character::slow( Monster& target)
 {
         DiceRoller* die = new DiceRoller;
-        DodgePer = WIS * 4;
+        DodgePer = WIS * 5;
         DiceRoll = die->rollDie();
 
         if (DodgePer <= DiceRoll)
@@ -107,7 +107,7 @@ void Character::slow( Monster& target)
 void Character::weak( Monster& target)
 {
         DiceRoller* die = new DiceRoller;
-        DodgePer = WIS * 4;
+        DodgePer = WIS * 5;
         DiceRoll = die->rollDie();
 
         if (DodgePer <= DiceRoll)
@@ -145,17 +145,18 @@ void Character::magicmissile(Monster& target)
     if(MP >= 5){
         MP -= 5;
         DiceRoller* die = new DiceRoller;
-        DodgePer = ((target.SPD - WIS)/target.SPD);
+        DodgePer = ((WIS)/target.SPD);
         if(DodgePer < 0){DodgePer = 1;}
         DiceRoll = die->rollDie();
         if (DodgePer >= DiceRoll)
         {
-            Damage = (INT - target.DEF) * 1.3;
-            target.HP -= Damage;
-            std::cout << Name << " conjures an orb and launches it at " << target.Name << " for " << Damage << " damage!" << std::endl;
+            std::cout << Name << " conjures an orb and launches it at " << target.Name << " but it dodges!" << std::endl;
         } else
         {
-            std::cout << Name << " conjures an orb and launches it at " << target.Name << " but it dodges!" << std::endl;
+            Damage = (INT - target.DEF) * 1.5;
+            target.HP -= Damage;
+            std::cout << Name << " conjures an orb and launches it at " << target.Name << " for " << Damage << " damage!" << std::endl;
+
         }
         delete die;
     } else {

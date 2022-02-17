@@ -59,7 +59,7 @@ void Combat::combatMenu(Character& C)
 void Combat::combat1(Character& C)
 {
 
-	while  (M.HP>0 && C.HP>0 )
+	while  (M.HP>=0 && C.HP>=0 )
 	{
         if(C.poisoned) M.HP -= 5;
 
@@ -68,13 +68,12 @@ void Combat::combat1(Character& C)
 		combatMenu(C);
 
 	}
-	if (M.HP<0)
+	if (M.HP<=0){
         std::cout << "Congratulations! You killed the monster!" << std::endl;
-		std::cout << std::endl;
-
-	if (C.HP<0)
+		std::cout << std::endl;}
+		else if (C.HP<=0){
     	std::cout << "You fell in battle. Game over." << std::endl;
-		std::cout << std::endl;
+		std::cout << std::endl;}
 
 }
 
