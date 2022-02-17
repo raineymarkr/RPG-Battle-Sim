@@ -1,33 +1,33 @@
 # RPG-Battle-Sim
-WIP Dice-based RPG battle simulator. Build a character sheet, use physical or a range of magic attacks and battle against several enemies.
-
-Best values for stats are in the 5-15 range, but play around with different builds. 
-
-ATK influences physical damage
-INT influnces magical damage
-ACC influences physical hit chance
-WIS influnces magical hit chance and MP
-SPD influences dodge chances
-DEF influences damage reduction and HP
-
-Monsters include:
-Slime         
-ATK: 5         
-DEF: 8          
-SPD: 3          
-ACC: 9          
-
-Skeleton        
-ATK: 10     
-DEF: 6       
-SPD: 10        
-ACC: 8
-
-Demon         
-ATK: 15         
-DEF: 8          
-SPD: 15          
-ACC: 10   
-
-Known Bugs:
+WIP Dice-based RPG battle simulator. <br> Build a character sheet, use physical or a range of magic attacks and battle against several enemies.
+<br>
+Best values for stats are in the 5-15 range, but play around with different builds.<br>
+<br>
+ATK influences physical damage.<br>
+INT influnces magical damage.<br>
+ACC influences physical hit chance.<br>
+WIS influnces magical hit chance and MP.<br>
+SPD influences dodge chances.<br>
+DEF influences damage reduction and HP.<br>
+<br>
+Monsters include:<br>
+Slime         <br>
+ATK: 5         <br>
+DEF: 8          <br>
+SPD: 3          <br>
+ACC: 9          <br>
+<br>
+Skeleton<br>        
+ATK: 10     <br>
+DEF: 6       <br>
+SPD: 10        <br>
+ACC: 8<br>
+<br>
+Demon<br>         
+ATK: 15   <br>      
+DEF: 8        <br>  
+SPD: 15          <br>
+ACC: 10   <br>
+<br>
+Known Bugs:<br>
 -Sometimes HP falls below 0 and game does not end, must land one more attack to trigger battle end.
