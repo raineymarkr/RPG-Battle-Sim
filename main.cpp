@@ -4,8 +4,8 @@
 #include "Character.h"
 #include "Combat.h"
 
-Monster Slime("Slime", 5, 10, 3, 9);
-Monster Skeleton("Skeleton", 15, 6, 9, 8);
+Monster Slime("Slime", 5, 8, 3, 9);
+Monster Skeleton("Skeleton", 15, 6, 12, 8);
 Monster Demon("Demon", 15, 8, 15, 10);
 
 
@@ -56,22 +56,25 @@ int main()
             std::cin >> mlist;
             if(mlist == 1){
             Character Player(Name, ATK, DEF, SPD, ACC, WIS, INT);
+            Player.poisoned = false;
             Combat combat(Slime);
             combat.combat1(Player);
-            Player.poisoned = false;
-            std::cout << "You conquered!" << std::endl;}
+
+            std::cout << "You've conquered!" << std::endl;}
             else if(mlist == 2){
             Character Player(Name, ATK, DEF, SPD, ACC, WIS, INT);
+            Player.poisoned = false;
             Combat combat(Skeleton);
             combat.combat1(Player);
-            Player.poisoned = false;
-            std::cout << "You conquered!" << std::endl;}
+
+            std::cout << "You've conquered!" << std::endl;}
             else if(mlist == 3){
             Character Player(Name, ATK, DEF, SPD, ACC, WIS, INT);
+            Player.poisoned = false;
             Combat combat(Demon);
             combat.combat1(Player);
-            Player.poisoned = false;
-            std::cout << "You conquered!" << std::endl;}
+
+            std::cout << "You've conquered!" << std::endl;}
             }
             else if(choice == 0){
             return 0;}
