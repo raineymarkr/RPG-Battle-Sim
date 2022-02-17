@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1645108844 source:/home/markrainey/CodeBlocks Projects/Battle Sim/main.cpp
+	<iostream>
+	<string>
+	"DiceRoller.h"
+	"Character.h"
+	"Combat.h"
+
+1645023459 /home/markrainey/CodeBlocks Projects/Battle Sim/include/DiceRoller.h
+
+1645024100 source:/home/markrainey/CodeBlocks Projects/Battle Sim/src/DiceRoller.cpp
+	"DiceRoller.h"
+	<ctime>
+	<cmath>
+
+1645125783 source:/home/markrainey/CodeBlocks Projects/Battle Sim/src/Character.cpp
+	"Character.h"
+
+1645123817 /home/markrainey/CodeBlocks Projects/Battle Sim/include/Character.h
+	<string>
+	<iostream>
+	"Monster.h"
+	"main.h"
+	"DiceRoller.h"
+
+1645029931 /home/markrainey/CodeBlocks Projects/Battle Sim/include/Monster.h
+	"Character.h"
+	"DiceRoller.h"
+	"main.h"
+
+1644941378 /home/markrainey/CodeBlocks Projects/Battle Sim/include/main.h
+
+1645068798 /home/markrainey/CodeBlocks Projects/Battle Sim/include/Combat.h
+	"Character.h"
+	"Monster.h"
+
+1645126150 source:/home/markrainey/CodeBlocks Projects/Battle Sim/src/Combat.cpp
+	"Combat.h"
+	"Monster.h"
+	"Character.h"
+
+1645068598 source:/home/markrainey/CodeBlocks Projects/Battle Sim/src/Monster.cpp
+	"Monster.h"
+	<cmath>
+
