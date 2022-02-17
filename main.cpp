@@ -48,13 +48,15 @@ int main()
 
     std::cout << "What is your character's WIS?" << std::endl;
     std::cin >> WIS;
+    std::cout << std::endl;
 
 
     }else if(choice == 2){
-            std::cout << "Choose an Enemy" << std::endl;
+            std::cout << "\nChoose an Enemy" << std::endl;
             std::cout << "1. Slime, 2. Skeleton, 3. Demon\n";
             std::cin >> mlist;
             if(mlist == 1){
+            std::cout << "\n----- BATTLE START! -----\n";
             Character Player(Name, ATK, DEF, SPD, ACC, WIS, INT);
             Player.poisoned = false;
             Combat combat(Slime);
@@ -62,6 +64,7 @@ int main()
 
             std::cout << "You've conquered!" << std::endl;}
             else if(mlist == 2){
+            std::cout << "\n----- BATTLE START! -----\n";
             Character Player(Name, ATK, DEF, SPD, ACC, WIS, INT);
             Player.poisoned = false;
             Combat combat(Skeleton);
@@ -69,6 +72,7 @@ int main()
 
             std::cout << "You've conquered!" << std::endl;}
             else if(mlist == 3){
+            std::cout << "\n----- BATTLE START! -----\n";
             Character Player(Name, ATK, DEF, SPD, ACC, WIS, INT);
             Player.poisoned = false;
             Combat combat(Demon);
