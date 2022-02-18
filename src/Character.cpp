@@ -46,21 +46,26 @@ void Character::attack( Monster& target)
 
 void Character::poison( Monster& target)
 {
+        if(MP >= 5){
+        MP -= 5;
         DiceRoller* die = new DiceRoller;
         DodgePer = WIS * 5;
         DiceRoll = die->rollDie();
         if (DodgePer <= DiceRoll)
         {
-            std::cout << Name << "opens their mouth wide, expecting a cloud to emerge, but nothing happens..." << std::endl;
+            std::cout << Name << " opens their mouth wide, expecting a cloud to emerge, but nothing happens..." << std::endl;
         }
         else{
-            std::cout << Name << " opens their mouth wide as a dense, violet fog billows from their chest and fills the air.\nPoisoned!" << std::endl;
+            std::cout << Name << " opens their mouth wide as a dense, violet fog billows from their chest and fills the air.\nEnemy poisoned!" << std::endl;
             poisoned = true;
         }
+        } else rest();
 }
 
 void Character::burn( Monster& target)
 {
+        if(MP >= 5){
+        MP -= 5;
         DiceRoller* die = new DiceRoller;
         DodgePer = WIS * 5;
         DiceRoll = die->rollDie();
@@ -70,12 +75,15 @@ void Character::burn( Monster& target)
             std::cout << Name << " performs several hand signs, but nothing happens..." << std::endl;
         }
         else{
-            std::cout << Name << " performs several hand signs, with each a burning trail grows stronger from an ember to an inferno that engulfs " << target.Name << "\nBurned!"<< std::endl;
+            std::cout << Name << " performs several hand signs, with each a burning trail grows stronger from an ember to an inferno that engulfs " << target.Name << ".\nBurned!"<< std::endl;
         target.DEF -= 5;}
+        } else rest();
 }
 
 void Character::confuse( Monster& target)
 {
+        if(MP >= 5){
+        MP -= 5;
         DiceRoller* die = new DiceRoller;
         DodgePer = WIS * 5;
         DiceRoll = die->rollDie();
@@ -85,12 +93,15 @@ void Character::confuse( Monster& target)
             std::cout << Name << " begins to dance, but nothing happens..." << std::endl;
         }
         else{
-            std::cout << Name << " performs a slow, mythical dance that slowly hypnotizes " << target.Name << "\nConfused!"<< std::endl;
+            std::cout << Name << " performs a slow, mythical dance that slowly hypnotizes " << target.Name << ".\nConfused!"<< std::endl;
         target.ACC -= 5;}
+        } else rest();
 }
 
 void Character::slow( Monster& target)
 {
+        if(MP >= 5){
+        MP -= 5;
         DiceRoller* die = new DiceRoller;
         DodgePer = WIS * 5;
         DiceRoll = die->rollDie();
@@ -100,12 +111,15 @@ void Character::slow( Monster& target)
             std::cout << Name << " grips their fist dramatically, but nothing happens..." << std::endl;
         }
         else{
-            std::cout << Name << " raises their arm to their chest and grips their fist tightly, summoning several glowing chains which dance around it. With a fist pump, the chains launch at the feet of " << target.Name << "\nSlowed!"<< std::endl;
+            std::cout << Name << " raises their arm to their chest and grips their fist tightly, summoning several glowing chains which dance around it. With a fist pump, the chains launch at the feet of " << target.Name << ".\nSlowed!"<< std::endl;
         target.SPD -= 5;}
+        } else rest();
 }
 
 void Character::weak( Monster& target)
 {
+        if(MP >= 5){
+        MP -= 5;
         DiceRoller* die = new DiceRoller;
         DodgePer = WIS * 5;
         DiceRoll = die->rollDie();
@@ -115,8 +129,9 @@ void Character::weak( Monster& target)
             std::cout << Name << " chants a dark hymn, but nothing happens..." << std::endl;
         }
         else{
-            std::cout << Name << " chants a dark hymn. " << target.Name << "begins to grow hysterical as the demonic tune penetrates their psyche. \nWeakened!"<< std::endl;
+            std::cout << Name << " chants a dark hymn. " << target.Name << " begins to grow hysterical as the demonic tune penetrates their psyche.\nWeakened!"<< std::endl;
         target.DEF -= 5;}
+        } else rest();
 }
 
 void Character::rest()
@@ -150,12 +165,12 @@ void Character::magicmissile(Monster& target)
         DiceRoll = die->rollDie();
         if (DodgePer >= DiceRoll)
         {
-            std::cout << Name << " conjures an orb and launches it at " << target.Name << " but it dodges!" << std::endl;
+            std::cout << Name << " conjures an orb between their palms, feeding it magical energy until it glows like the hot sun. They launch it at " << target.Name << " but it dodges!" << std::endl;
         } else
         {
             Damage = (INT - target.DEF) * 1.5;
             target.HP -= Damage;
-            std::cout << Name << " conjures an orb and launches it at " << target.Name << " for " << Damage << " damage!" << std::endl;
+            std::cout << Name << " conjures an orb between their palms, feeding it magical energy until it glows like the hot sun. They launch it at " << target.Name << " for " << Damage << " damage!" << std::endl;
 
         }
         delete die;
