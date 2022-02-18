@@ -15,6 +15,7 @@ void Combat::combatMenu(Character& C)
 	int choice;
 	int mchoice;
 	std::cin >> choice;
+	std::cout << std::endl;
 	switch (choice)
 	{
 		case 1:
@@ -69,9 +70,11 @@ void Combat::combat1(Character& C)
 
 	}
 	if (M.HP<=0){
+        printart("pics/trophy");
         std::cout << "Congratulations! You killed the monster!" << std::endl;
 		std::cout << std::endl;}
 		else if (C.HP<=0){
+        printart("pics/grave");
     	std::cout << "You fell in battle. Game over." << std::endl;
 		std::cout << std::endl;}
 

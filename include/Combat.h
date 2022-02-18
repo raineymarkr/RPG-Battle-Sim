@@ -3,6 +3,7 @@
 
 #include "Character.h"
 #include "Monster.h"
+#include "printart.h"
 
 class Combat
 {

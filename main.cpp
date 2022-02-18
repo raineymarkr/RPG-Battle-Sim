@@ -3,9 +3,10 @@
 #include "DiceRoller.h"
 #include "Character.h"
 #include "Combat.h"
+#include "printart.h"
 
 Monster Slime("Slime", 5, 8, 3, 9);
-Monster Skeleton("Skeleton", 15, 6, 12, 8);
+Monster Skeleton("Skeleton", 10, 6, 10, 8);
 Monster Demon("Demon", 15, 8, 15, 10);
 
 
@@ -56,7 +57,8 @@ int main()
             std::cout << "1. Slime, 2. Skeleton, 3. Demon\n";
             std::cin >> mlist;
             if(mlist == 1){
-            std::cout << "\n----- BATTLE START! -----\n";
+            std::cout << "\n----- BATTLE START! -----\n\n";
+            printart("monsters/slime");
             Character Player(Name, ATK, DEF, SPD, ACC, WIS, INT);
             Player.poisoned = false;
             Combat combat(Slime);
@@ -65,6 +67,7 @@ int main()
             std::cout << "You've conquered!" << std::endl;}
             else if(mlist == 2){
             std::cout << "\n----- BATTLE START! -----\n";
+            printart("monsters/skeleton");
             Character Player(Name, ATK, DEF, SPD, ACC, WIS, INT);
             Player.poisoned = false;
             Combat combat(Skeleton);
@@ -73,6 +76,7 @@ int main()
             std::cout << "You've conquered!" << std::endl;}
             else if(mlist == 3){
             std::cout << "\n----- BATTLE START! -----\n";
+            printart("monsters/demon");
             Character Player(Name, ATK, DEF, SPD, ACC, WIS, INT);
             Player.poisoned = false;
             Combat combat(Demon);
