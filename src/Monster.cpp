@@ -1,7 +1,7 @@
 #include "Monster.h"
 #include <cmath>
 
-
+//Monster Constructor
 Monster::Monster(std::string newname, int newATK, int newDEF, int newSPD, int newACC)
 {
     Name = newname;
@@ -12,13 +12,14 @@ Monster::Monster(std::string newname, int newATK, int newDEF, int newSPD, int ne
     ACC = newACC;
 }
 
+//Basic Attack
 void Monster::attack( Character& target)
 {
         DiceRoller* die = new DiceRoller;
         DodgePer = target.SPD * 4;
         DiceRoll = die->rollDie();
 
-        if (DodgePer >= DiceRoll)
+        if (DodgePer <= DiceRoll)
         {
             Damage = abs(ATK - target.DEF) * 1.3;
             if(Damage < 0)
@@ -37,6 +38,7 @@ void Monster::attack( Character& target)
 
     }
 
+        //Print Monster HP
         void Monster::display()
         {
             std::cout << Name << " HP : " << HP << std::endl;

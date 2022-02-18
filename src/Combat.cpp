@@ -2,6 +2,7 @@
 #include "Monster.h"
 #include "Character.h"
 
+
 Combat::Combat(Monster& newM) : M(newM)
 {
 }
@@ -62,11 +63,10 @@ void Combat::combat1(Character& C)
 
 	while  (M.HP>=0 && C.HP>=0 )
 	{
-        if(C.poisoned) M.HP -= 5;
-
-		M.attack(C);
+		if(C.poisoned) M.HP -= 5;
 
 		combatMenu(C);
+        M.attack(C);
 
 	}
 	if (M.HP<=0){

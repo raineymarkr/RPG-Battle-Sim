@@ -5,11 +5,12 @@
 #include "Combat.h"
 #include "printart.h"
 
+//Define Monsters
 Monster Slime("Slime", 5, 8, 3, 9);
 Monster Skeleton("Skeleton", 10, 6, 10, 8);
 Monster Demon("Demon", 15, 8, 15, 10);
 
-
+//Define Stat Sheet Variables
 std::string Name;
 int ATK;
 int DEF;
@@ -26,7 +27,7 @@ int main()
     bool ifMenu = true;
 
     while(ifMenu){
-    std::cout << "1. Design a Character\n2. Choose an Enemy and Fight!\n0. End" << std::endl;
+    std::cout << "1. Design a Character\n2. Choose an Enemy and Fight!\n3. Helpful Info\n0. End" << std::endl;
     std::cin >> choice;
     if( choice == 1) {
     std::cout << "What is your character's Name?" << std::endl;
@@ -83,6 +84,11 @@ int main()
             combat.combat1(Player);
 
             std::cout << "You've conquered!" << std::endl;}
+            }
+            else if(choice == 3){
+                std::cout << "-------------------\nHelpful Info:\n\nIts best to limit your character to roughly 40-50 stat points, total.\nATK  Increase Attack Damage.\nDEF  Increase HP and Decrease Damage Taken.\nACC  Increase Attack Hit Chance. \nINT  Increase Magic Damage.\nWIS  Increase MP and Increase Spell Hit Chance." << std::endl;
+                std::cout << "\nSome suggested Builds are:\n\tFighter     Warrior     Adept       Wizard\nATK:\t10          12          3           3\nDEF:\t8           12          5           7"<< std::endl;
+                std::cout << "ACC:\t12          8           7           7\nSPD:\t12          8           5           7\nINT:\t3           3           9           12\nWIS:\t3           3           9           12\n" << std::endl;
             }
             else if(choice == 0){
             return 0;}
