@@ -1,24 +1,26 @@
 #include "Character.h"
 
-
 Character::Character(std::string newname, int newATK, int newDEF, int newSPD, int newACC, int newWIS, int newINT)
 {
     Name = newname;
     HP = newDEF * 5;
+    HPMAX = HP;
     MP = newWIS * 5;
+    MPMAX = MP;
     ATK = newATK;
     DEF = newDEF;
     ACC = newACC;
     SPD = newSPD;
     WIS = newWIS;
     INT = newINT;
-
+    Gold = 0;
+    alive = true;
 }
 
 void Character::attack( Monster& target)
 {
         DiceRoller* die = new DiceRoller;
-        DodgePer = target.SPD * 4;
+        DodgePer = target.SPD * 5;
         DiceRoll = die->rollDie();
 
         if (DodgePer <= DiceRoll)
@@ -51,7 +53,7 @@ void Character::poison( Monster& target)
         DiceRoller* die = new DiceRoller;
         DodgePer = WIS * 5;
         DiceRoll = die->rollDie();
-        if(poisoned == true)
+        if(target.Poisoned == true)
         {
             std::cout << Name << " opens their mouth wide as a dense, violet fog billows from their chest and fills the air.\nBut, the enemy was already poisoned!" << std::endl;
         }
@@ -60,7 +62,7 @@ void Character::poison( Monster& target)
             std::cout << Name << " opens their mouth wide, expecting a cloud to emerge, but nothing happens..." << std::endl;
         } else{
             std::cout << Name << " opens their mouth wide as a dense, violet fog billows from their chest and fills the air.\nEnemy poisoned!" << std::endl;
-            poisoned = true;
+            target.Poisoned = true;
             }
         } else rest();
 }
@@ -204,6 +206,7 @@ void Character::magicmissile(Monster& target)
         rest();
             }
 }
+
 
 void Character::display()
         {

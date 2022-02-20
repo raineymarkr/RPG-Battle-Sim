@@ -15,6 +15,7 @@ class Monster
     int DEF;
     int SPD;
     int ACC;
+    bool Poisoned;
     double DodgePer;
     int DiceRoll;
     std::string newname;
